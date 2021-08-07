@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo apt-get update -y && sudo apt-get install -f
+sudo apt-get update -y && sudo apt upgrade -y
+sudo apt-get install nginx -y
+sudo systemctl start nginx
+MYIP=`ifconfig | grep inet | awk 'NR==1, NR==1 {print$2}'`
+sudo mkdir -p /var/www/html
+sudo cd /var/www/html
+sudo touch index.html
+sudo chmod 777 -R /var/www/html/index.html
+echo 'Hello Team\nThis is my IP: '$MYIP > /var/www/html/index.html

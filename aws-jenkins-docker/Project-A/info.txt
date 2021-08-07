@@ -1,0 +1,1 @@
+This project will install jenkins and docker on AWS EC2 servers with LB and ASG.
